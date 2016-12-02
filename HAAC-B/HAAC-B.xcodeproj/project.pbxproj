@@ -15,8 +15,8 @@
 		A712E1511DF0BB7600EC7651 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = A712E1501DF0BB7600EC7651 /* Article.swift */; };
 		A712E1531DF0BE0500EC7651 /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A712E1521DF0BE0500EC7651 /* APIRequestManager.swift */; };
 		A712E1571DF0C46500EC7651 /* PreviewTransitionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A712E1561DF0C46500EC7651 /* PreviewTransitionTableViewController.swift */; };
-		A712E1591DF0C6BD00EC7651 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A712E1581DF0C6BD00EC7651 /* ArticleTableViewCell.swift */; };
 		A712E15B1DF0D78B00EC7651 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A712E15A1DF0D78B00EC7651 /* ViewController.swift */; };
+		A712E15D1DF13EEA00EC7651 /* articleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A712E15C1DF13EEA00EC7651 /* articleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +30,8 @@
 		A712E1501DF0BB7600EC7651 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		A712E1521DF0BE0500EC7651 /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
 		A712E1561DF0C46500EC7651 /* PreviewTransitionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewTransitionTableViewController.swift; sourceTree = "<group>"; };
-		A712E1581DF0C6BD00EC7651 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		A712E15A1DF0D78B00EC7651 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A712E15C1DF13EEA00EC7651 /* articleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = articleTableViewCell.swift; sourceTree = "<group>"; };
 		C297D1AA330500F77BC7C74F /* Pods_HAAC_B.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HAAC_B.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC0BE862B8DA9EF338BE04A /* Pods-HAAC-B.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAAC-B.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HAAC-B/Pods-HAAC-B.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,12 +78,12 @@
 		A712E13B1DF0B53C00EC7651 /* HAAC-B */ = {
 			isa = PBXGroup;
 			children = (
+				A712E1401DF0B53C00EC7651 /* Main.storyboard */,
 				A712E1501DF0BB7600EC7651 /* Article.swift */,
+				A712E15C1DF13EEA00EC7651 /* articleTableViewCell.swift */,
 				A712E13C1DF0B53C00EC7651 /* AppDelegate.swift */,
 				A712E1521DF0BE0500EC7651 /* APIRequestManager.swift */,
 				A712E1561DF0C46500EC7651 /* PreviewTransitionTableViewController.swift */,
-				A712E1581DF0C6BD00EC7651 /* ArticleTableViewCell.swift */,
-				A712E1401DF0B53C00EC7651 /* Main.storyboard */,
 				A712E15A1DF0D78B00EC7651 /* ViewController.swift */,
 				A712E1431DF0B53C00EC7651 /* Assets.xcassets */,
 				A712E1451DF0B53C00EC7651 /* LaunchScreen.storyboard */,
@@ -225,8 +225,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A712E15B1DF0D78B00EC7651 /* ViewController.swift in Sources */,
-				A712E1591DF0C6BD00EC7651 /* ArticleTableViewCell.swift in Sources */,
 				A712E1531DF0BE0500EC7651 /* APIRequestManager.swift in Sources */,
+				A712E15D1DF13EEA00EC7651 /* articleTableViewCell.swift in Sources */,
 				A712E13D1DF0B53C00EC7651 /* AppDelegate.swift in Sources */,
 				A712E1511DF0BB7600EC7651 /* Article.swift in Sources */,
 				A712E1571DF0C46500EC7651 /* PreviewTransitionTableViewController.swift in Sources */,

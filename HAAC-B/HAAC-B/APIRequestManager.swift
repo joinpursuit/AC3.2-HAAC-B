@@ -20,13 +20,14 @@ class APIRequestManager {
     private init() {}
     
     //MARK: - Methods
-    func getData(complete: @escaping ([Article]?) -> Void ){
+    func getData(complete: @escaping ([(Article, UIImage)]?) -> Void ){
         Alamofire.request("https://newsapi.org/v1/articles?apiKey=9c15262616974a2895a119a6626dbd2a&source=\(APIRequestManager.shared.source)").validate().responseJSON { (response) in
             if let rawJSON = response.result.value {
                 let json = JSON(rawJSON)
                 guard let articlesArray = json["articles"].array else { return }
                 
-                var allArticles: [Article] = []
+                var allArticles: [(Article, UIImage)] = []
+                
                 for article in articlesArray {
                     if let title = article["title"].string,
                         let description = article["description"].string,
@@ -37,7 +38,26 @@ class APIRequestManager {
                         let publishedAt = article["publishedAt"].string
                         
                         let myArticle = Article(author: author ?? "", title: title, description: description, url: url, urlToImage: urlToImage, publishedAt: publishedAt ?? "")
-                        allArticles.append(myArticle)
+                       
+                        var image = UIImage(named: "default-placeholder")!
+                        
+                        APIRequestManager.shared.getImage(imageString: myArticle.urlToImage, complete: { (data: Data?) in
+                            guard let validData = data else { return }
+                            DispatchQueue.main.async {
+                                image = UIImage(data: validData)!
+                            }
+                            print("There's validData from image")
+                            dump(validData)
+                            
+                        })
+                        
+//                        Alamofire.download(myArticle.urlToImage).responseData { response in
+//                            if let data = response.result.value {
+//                                image = UIImage(data: data)
+//                            }
+//                        }
+                        let tuple = (myArticle, image)
+                        allArticles.append(tuple)
                     }
                 }
                 complete(allArticles)
@@ -60,7 +80,7 @@ class APIRequestManager {
     }
     
     func getImage2(imageString: String, complete: @escaping (Data?) -> Void ) {
-        Alamofire.request("https://httpbin.org/get").responseData { response in
+        Alamofire.request(imageString).responseData { response in
             debugPrint("All Response Info: \(response)")
             
             if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) {
@@ -70,6 +90,5 @@ class APIRequestManager {
             }
         }.resume()
     }
-    
     
 }

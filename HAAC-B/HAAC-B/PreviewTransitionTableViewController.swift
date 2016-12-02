@@ -16,9 +16,6 @@ class PreviewTransitionTableViewController: PTTableViewController {
     
     var articlesArr: [Article] = []
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         APIRequestManager.shared.getData(source: "business-insider") { (allArticles) in
